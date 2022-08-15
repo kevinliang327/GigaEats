@@ -9,7 +9,7 @@ export default function RestaurantCard({ navigation, ...props }) {
         <TouchableOpacity
           key={index}
           activeOpacity={1}
-          style={{ marginBottom: 30 }}
+          style={{ marginBottom: 5 }}
           //   onPress={() =>
           //     navigation.navigate("RestaurantDetail", {
           //       name: restaurant.name,

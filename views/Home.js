@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import React, { useState, useEffect } from "react";
 import HeaderTabs from "../components/HeaderTabs";
 import SearchBar from "../components/SearchBar";
@@ -14,8 +14,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("Delivery");
 
   const getRestaurantsFromYelp = async () => {
-    const corsApiUrl = "https://cors-anywhere.herokuapp.com/";
-    const yelpUrl = `${corsApiUrl}https://api.yelp.com/v3/businesses/search?term=restaurants&location=${city}`;
+    const yelpUrl = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=${city}`;
 
     const apiOptions = {
       headers: {
@@ -36,16 +35,18 @@ export default function Home() {
 
   useEffect(() => {
     getRestaurantsFromYelp();
-  }, []);
+  }, [city, activeTab]);
 
   return (
     <SafeAreaView style={{ backgroundColor: "green", flex: 1 }}>
       <View style={{ backgroundColor: "white", padding: 15 }}>
         <HeaderTabs />
-        <SearchBar />
+        <SearchBar setCity={setCity} />
       </View>
-      <Categories />
-      <RestaurantCard restaurant={restaurant} />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Categories />
+        <RestaurantCard restaurant={restaurant} />
+      </ScrollView>
     </SafeAreaView>
   );
 }
