@@ -60,12 +60,12 @@ const foods = [
   },
 ];
 
-export default function SingleRestaurant({ route }) {
+export default function SingleRestaurant({ route, navigation }) {
   return (
     <View>
       <About route={route} />
       <Divider width={1.8} style={{ marginVertical: 20 }} />
-      <FoodCard foods={foods} />
+      <FoodCard foods={foods} restaurantName={route.params.name} />
     </View>
   );
 }

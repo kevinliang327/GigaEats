@@ -83,7 +83,7 @@ const FoodInfo = (props) => (
 const FoodImage = ({ marginLeft, ...props }) => (
   <View>
     <Image
-      source={{ uri: props.food.image }}
+      source={{ uri: props.food.imageUrl }}
       style={{
         width: 100,
         height: 100,
