@@ -4,6 +4,8 @@ import HeaderTabs from "../components/HeaderTabs";
 import SearchBar from "../components/SearchBar";
 import Categories from "../components/Categories";
 import RestaurantCard from "../components/RestaurantCard";
+import { Divider } from "react-native-elements";
+import FooterTabs from "../components/FooterTabs";
 
 const yelpAPIKey =
   "i4JPjeg1GLTg51TeDtuGx4ZG_cbHyywscLaoHL-djvHtOq1unDWtVwV6lB8fwFKViyjpIDVUjTqH9q84_GHOG0fxqvHlacro8y3YuycCpgB3qzocAqQ-SYluOq_5YnYx";
@@ -47,6 +49,8 @@ export default function Home() {
         <Categories />
         <RestaurantCard restaurant={restaurant} />
       </ScrollView>
+      <Divider width={1} />
+      <FooterTabs />
     </SafeAreaView>
   );
 }
