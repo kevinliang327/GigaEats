@@ -3,6 +3,7 @@ import React from "react";
 import About from "../components/About";
 import { Divider } from "react-native-elements";
 import FoodCard from "../components/FoodCard";
+import ViewCartButton from "../components/ViewCartButton";
 
 const foods = [
   {
@@ -66,6 +67,7 @@ export default function SingleRestaurant({ route, navigation }) {
       <About route={route} />
       <Divider width={1.8} style={{ marginVertical: 20 }} />
       <FoodCard foods={foods} restaurantName={route.params.name} />
+      <ViewCartButton navigation={navigation} />
     </View>
   );
 }
