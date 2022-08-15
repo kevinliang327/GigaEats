@@ -65,7 +65,7 @@ export default function SingleRestaurant({ route }) {
     <View>
       <About route={route} />
       <Divider width={1.8} style={{ marginVertical: 20 }} />
-      <FoodCard />
+      <FoodCard foods={foods} />
     </View>
   );
 }

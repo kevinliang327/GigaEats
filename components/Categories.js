@@ -44,21 +44,17 @@ export default function Categories() {
     >
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {items.map((item, index) => (
-          <TouchableOpacity>
-            <View key={index} style={{ alignItems: "center", marginRight: 30 }}>
-              <Image
-                source={item.image}
-                style={{
-                  width: 50,
-                  height: 40,
-                  resizeMode: "contain",
-                }}
-              />
-              <Text style={{ fontSize: 13, fontWeight: "900" }}>
-                {item.text}
-              </Text>
-            </View>
-          </TouchableOpacity>
+          <View key={index} style={{ alignItems: "center", marginRight: 30 }}>
+            <Image
+              source={item.image}
+              style={{
+                width: 50,
+                height: 40,
+                resizeMode: "contain",
+              }}
+            />
+            <Text style={{ fontSize: 13, fontWeight: "900" }}>{item.text}</Text>
+          </View>
         ))}
       </ScrollView>
     </View>
