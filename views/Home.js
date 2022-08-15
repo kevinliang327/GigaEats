@@ -10,7 +10,7 @@ import FooterTabs from "../components/FooterTabs";
 const yelpAPIKey =
   "i4JPjeg1GLTg51TeDtuGx4ZG_cbHyywscLaoHL-djvHtOq1unDWtVwV6lB8fwFKViyjpIDVUjTqH9q84_GHOG0fxqvHlacro8y3YuycCpgB3qzocAqQ-SYluOq_5YnYx";
 
-export default function Home() {
+export default function Home({ navigation }) {
   const [restaurant, setRestaurant] = useState([]);
   const [city, setCity] = useState("New York City");
   const [activeTab, setActiveTab] = useState("Delivery");
@@ -47,7 +47,7 @@ export default function Home() {
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Categories />
-        <RestaurantCard restaurant={restaurant} />
+        <RestaurantCard restaurant={restaurant} navigation={navigation} />
       </ScrollView>
       <Divider width={1} />
       <FooterTabs />

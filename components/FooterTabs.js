@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import React, { Component } from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
@@ -24,12 +24,14 @@ export default class FooterTabs extends Component {
 }
 
 const Icon = (props) => (
-  <View>
-    <FontAwesome5
-      name={props.icon}
-      size={25}
-      style={{ marginBottom: 3, alignSelf: "center" }}
-    />
-    <Text>{props.text}</Text>
-  </View>
+  <TouchableOpacity>
+    <View>
+      <FontAwesome5
+        name={props.icon}
+        size={25}
+        style={{ marginBottom: 3, alignSelf: "center" }}
+      />
+      <Text>{props.text}</Text>
+    </View>
+  </TouchableOpacity>
 );
