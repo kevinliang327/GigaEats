@@ -1,6 +1,5 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { TouchableOpacity } from "react-native-web";
 
 export default function HeaderTabs() {
   const [activeTab, setActiveTab] = useState("Delivery");
@@ -25,24 +24,26 @@ export default function HeaderTabs() {
   );
 }
 
-const HeaderButton = (props) => (
-  <TouchableOpacity
-    style={{
-      backgroundColor: props.activeTab === props.text ? "black" : "white",
-      paddingVertical: 6,
-      paddingHorizontal: 16,
-      borderRadius: 30,
-    }}
-    onPress={() => props.setActiveTab(props.text)}
-  >
-    <Text
+const HeaderButton = (props) => {
+  return (
+    <TouchableOpacity
       style={{
-        color: props.activeTab === props.text ? "white" : "black",
-        fontSize: 15,
-        fontWeight: "900",
+        backgroundColor: props.activeTab === props.text ? "black" : "white",
+        paddingVertical: 6,
+        paddingHorizontal: 16,
+        borderRadius: 30,
       }}
+      onPress={() => props.setActiveTab(props.text)}
     >
-      {props.text}
-    </Text>
-  </TouchableOpacity>
-);
+      <Text
+        style={{
+          color: props.activeTab === props.text ? "white" : "black",
+          fontSize: 15,
+          fontWeight: "900",
+        }}
+      >
+        {props.text}
+      </Text>
+    </TouchableOpacity>
+  );
+};

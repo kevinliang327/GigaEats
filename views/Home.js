@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import HeaderTabs from "../components/HeaderTabs";
 import SearchBar from "../components/SearchBar";
 import Categories from "../components/Categories";
-import RestaurantCard, { localRestaurants } from "../components/RestaurantCard";
+import RestaurantCard from "../components/RestaurantCard";
 
 const yelpAPIKey =
   "i4JPjeg1GLTg51TeDtuGx4ZG_cbHyywscLaoHL-djvHtOq1unDWtVwV6lB8fwFKViyjpIDVUjTqH9q84_GHOG0fxqvHlacro8y3YuycCpgB3qzocAqQ-SYluOq_5YnYx";
